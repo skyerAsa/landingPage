@@ -50,10 +50,12 @@ body {
   }
   .title_img {
     position: relative;
+    width: 1500px;
     @include rwd(1200) {
       display: none;
     }
     img {
+      object-fit: cover;
       height: 100%;
     }
     .logo {
@@ -175,7 +177,7 @@ body {
             0px -8px 11px 4px rgba(109, 109, 109, 0.3) inset;
         }
       }
-    }                                                                         
+    }
   }
   .item_txt {
     padding: 40px 0 0 40px;

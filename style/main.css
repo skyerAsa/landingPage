@@ -221,6 +221,7 @@ body {
 }
 .container .title_img {
   position: relative;
+  width: 1500px;
 }
 @media screen and (max-width: 1200px) {
   .container .title_img {
@@ -228,6 +229,8 @@ body {
   }
 }
 .container .title_img img {
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 100%;
 }
 .container .title_img .logo {
