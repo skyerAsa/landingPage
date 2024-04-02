@@ -221,17 +221,30 @@ body {
 }
 .container .title_img {
   position: relative;
-  width: 1500px;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 35%;
 }
 @media screen and (max-width: 1200px) {
   .container .title_img {
     display: none;
   }
 }
-.container .title_img img {
-  -o-object-fit: cover;
-     object-fit: cover;
+@media screen and (max-width: 1500px) {
+  .container .title_img {
+    min-width: 70%;
+  }
+}
+.container .title_img .img {
   height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 .container .title_img .logo {
   margin: 50px 0 0 30px;
@@ -252,13 +265,21 @@ body {
 }
 
 .item {
-  padding: 40px 40px;
   background-color: #000;
   color: #fff;
+}
+@media screen and (max-width: 1500px) {
+  .item {
+    flex: 1;
+    min-width: 40%;
+    position: relative;
+    left: -130px;
+  }
 }
 @media screen and (max-width: 1200px) {
   .item {
     padding: 0 20px 100px;
+    left: 0;
   }
 }
 .item .connect {
@@ -294,7 +315,7 @@ body {
   background: linear-gradient(180deg, #b906ff 0%, #9a0266 100%);
 }
 .item .download_txt {
-  padding: 150px 0 0 60px;
+  padding: 150px 40px 0 60px;
 }
 @media screen and (max-width: 1200px) {
   .item .download_txt {
@@ -377,8 +398,12 @@ body {
   display: flex;
 }
 .item .cardlist ul li {
-  flex: 1;
   position: relative;
+}
+@media screen and (max-width: 1200px) {
+  .item .cardlist ul li {
+    flex: 1;
+  }
 }
 .item .cardlist ul li + li {
   margin-left: 5px;
