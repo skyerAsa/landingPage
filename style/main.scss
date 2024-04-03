@@ -88,7 +88,7 @@ body {
       p {
         color: #fff;
         font-size: 14px;
-        @include rwd(661) {
+        @include rwd(665) {
           font-size: 12px;
         }
       }
