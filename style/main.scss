@@ -39,6 +39,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: space-between;
   @include rwd(1200) {
     display: block;
   }
@@ -50,16 +51,11 @@ body {
   }
   .title_img {
     position: relative;
-    width: 1500px;
-    background-image: url(../img/pcBg05.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center ;
+    flex: 1;
     @include rwd(1200) {
       display: none;
     }
-    img {
-      object-fit: cover;
+    .img {
       height: 100%;
     }
     .logo {
@@ -68,11 +64,10 @@ body {
       @include pos(tl, 0);
     }
     .img_txt {
-      margin-bottom: 40px;
+      margin: 0 0 5% 5%;
       position: absolute;
       @include pos(bl, 0);
       p {
-        margin-left: 80px;
         color: #fff;
         font-size: 14px;
       }
@@ -81,21 +76,29 @@ body {
 }
 
 .item {
-  padding: 40px 40px;
+  box-sizing: border-box;
+  margin: 40px 40px;
   background-color: #000;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  @include rwd(1459) {
+    width: 20%;
+  }
   @include rwd(1200) {
-    padding: 0 20px 100px;
+    margin: 0 20px 100px;
   }
   // connect
   .connect {
-    padding: 50px 20px 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     color: #fff;
     font-size: 12px;
-    white-space: nowrap;
+    // @include rwd(1359) {
+    //   display: none;
+    // }
     @include rwd(1200) {
       display: none;
     }
@@ -116,36 +119,62 @@ body {
       justify-content: center;
       border-radius: 20px;
       background: linear-gradient(180deg, #b906ff 0%, #9a0266 100%);
+      @include rwd(1259) {
+        padding: 10px 15px;
+      }
     }
   }
   // download
   .download_txt {
-    padding: 150px 0 0 60px;
+    margin-left: 30px;
     @include rwd(1200) {
       display: none;
     }
     .caption {
-      padding-bottom: 40px;
+      margin-bottom: 40px;
       display: flex;
       align-items: flex-end;
       font-weight: 900;
       font-size: 48px;
+      justify-content: center;
       text-shadow: 0.1em 0.1em #fe00d0;
-      white-space: nowrap;
+      @include rwd(1459) {
+        font-size: 30px;
+      }
+      @include rwd(1448) {
+        font-size: 24px;
+      }
       p {
         font-size: 60px;
+        @include rwd(1459) {
+          font-size: 42px;
+        }
+        @include rwd(1448) {
+          font-size: 36px;
+        }
       }
     }
     .download {
       display: flex;
+      justify-content: center;
+      @include rwd(1459) {
+        display: block;
+      }
       .qr_card {
         padding-right: 30px;
+        @include rwd(1459) {
+          padding: 0 0 20px 0;
+          text-align: center;
+        }
         img {
           width: 148px;
           height: 147px;
         }
       }
       .photo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .ph_txt {
           padding-left: 10px;
         }
@@ -184,15 +213,15 @@ body {
     }
   }
   .item_txt {
-    padding: 40px 0 0 40px;
-    white-space: nowrap;
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
     @include rwd(1200) {
       display: none;
     }
   }
   // cardlist
   .cardlist {
-    padding-top: 100px;
     @include rwd(1200) {
       padding: 0px;
     }
@@ -230,6 +259,7 @@ body {
         margin-top: 10px;
         border-radius: 50px;
         background-color: gray;
+        margin-bottom: 10px;
         & + .img_circle {
           margin-left: 5px;
         }
