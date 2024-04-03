@@ -216,9 +216,9 @@ body {
 }
 
 .container {
-  min-height: 700px;
   width: 100%;
   height: 100%;
+  min-height: 700px;
   display: flex;
   justify-content: space-between;
 }
@@ -229,10 +229,30 @@ body {
 }
 .container .hd_img {
   display: none;
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .container .hd_img {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+}
+.container .hd_img img {
+  height: 100%;
+}
+.container .hd_img .logo {
+  width: 24vw;
+  height: 8vw;
+  position: absolute;
+  top: 50px;
+  left: 30px;
 }
 @media screen and (max-width: 600px) {
-  .container .hd_img {
-    display: block;
+  .container .hd_img .logo {
+    display: none;
   }
 }
 .container .title_img {
@@ -240,11 +260,12 @@ body {
   height: 100%;
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   top: 0;
   left: 0;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .container .title_img {
     display: none;
   }
@@ -253,15 +274,14 @@ body {
   position: relative;
 }
 .container .title_img .logo {
-  margin: 50px 0 0 30px;
+  width: 15vw;
+  height: 2vw;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50px;
+  left: 30px;
 }
 .container .title_img .img_txt {
-  padding: 0 0 10px 10px;
-  margin: 0 0 1% 1%;
-  position: absolute;
+  text-align: center;
   bottom: 0;
   left: 0;
 }
@@ -286,7 +306,12 @@ body {
 }
 @media screen and (max-width: 1459px) {
   .item {
-    width: 20%;
+    width: 30%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .item {
+    margin: 0 30px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -492,7 +517,7 @@ body {
 @media screen and (max-width: 1309px) {
   .item .download_txt .download .photo .android,
   .item .download_txt .download .photo .ios {
-    width: 150px;
+    width: 200px;
     font-size: 0px;
   }
 }
@@ -548,16 +573,11 @@ body {
     display: none;
   }
 }
-@media screen and (max-width: 800px) {
-  .item .cardlist ul li:nth-child(2) {
-    display: none;
-  }
-}
 @media screen and (max-width: 600px) {
   .item .cardlist ul li {
     padding: 0px;
   }
-  .item .cardlist ul li:nth-child(2), .item .cardlist ul li:nth-child(3), .item .cardlist ul li:nth-child(4), .item .cardlist ul li:last-child {
+  .item .cardlist ul li:nth-child(3), .item .cardlist ul li:nth-child(4), .item .cardlist ul li:last-child {
     display: flex;
   }
 }

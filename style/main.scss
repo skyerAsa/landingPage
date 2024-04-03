@@ -48,9 +48,9 @@ body {
 }
 
 .container {
-  min-height: 700px;
   width: 100%;
   height: 100%;
+  min-height: 700px;
   display: flex;
   justify-content: space-between;
   @include rwd(600) {
@@ -58,8 +58,26 @@ body {
   }
   .hd_img {
     display: none;
-    @include rwd(600) {
-      display: block;
+    position: relative;
+    @include rwd(900) {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+    img{
+      height: 100%;
+    }
+    .logo {
+      width: 24vw;
+      height: 8vw;
+      position: absolute;
+      top: 50px;
+      left: 30px;
+      @include rwd(600) {
+        display: none;
+      }
     }
   }
   .title_img {
@@ -67,23 +85,24 @@ body {
     height: 100%;
     position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     @include pos(tl, 0);
-    @include rwd(600) {
+    @include rwd(900) {
       display: none;
     }
     .img {
       position: relative;
     }
     .logo {
-      margin: 50px 0 0 30px;
+      width: 15vw;
+      height: 2vw;
       position: absolute;
-      @include pos(tl, 0);
+      top: 50px;
+      left: 30px;
     }
     .img_txt {
-      padding: 0 0 10px 10px;
-      margin: 0 0 1% 1%;
-      position: absolute;
+      text-align: center;
       @include pos(bl, 0);
       p {
         color: #fff;
@@ -105,7 +124,10 @@ body {
   flex-direction: column;
   justify-content: space-around;
   @include rwd(1459) {
-    width: 20%;
+    width: 30%;
+  }
+  @include rwd(900) {
+    margin: 0 30px;
   }
   @include rwd(600) {
     width: auto;
@@ -261,7 +283,7 @@ body {
           border-radius: 50px;
           font-size: 10px;
           @include rwd(1309) {
-            width: 150px;
+            width: 200px;
             font-size: 0px;
           }
         }
@@ -316,14 +338,8 @@ body {
             display: none;
           }
         }
-        @include rwd(800) {
-          &:nth-child(2) {
-            display: none;
-          }
-        }
         @include rwd(600) {
           padding: 0px;
-          &:nth-child(2),
           &:nth-child(3),
           &:nth-child(4),
           &:last-child {
