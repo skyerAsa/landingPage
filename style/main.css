@@ -246,9 +246,12 @@ body {
     height: auto;
   }
 }
+.container .hd_img .bg_img {
+  min-height: 832px;
+}
 .container .hd_img .logo {
   width: 24vw;
-  height: 8vw;
+  height: 1vw;
   position: absolute;
   top: 50px;
   left: 30px;
