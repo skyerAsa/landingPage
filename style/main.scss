@@ -71,8 +71,6 @@ body {
       height: auto;
     }
     img {
-
-      height: 100%;
     }
     .logo {
       width: 24vw;
@@ -121,23 +119,29 @@ body {
 }
 
 .item {
+
   box-sizing: border-box;
   margin: 40px 30px 0 30px;
   background-color: #000;
   color: #fff;
   display: flex;
+  overflow: auto;
   flex-direction: column;
   justify-content: space-around;
   @include rwd(1459) {
     width: 30%;
   }
   @include rwd(900) {
+    height: 90vh;
     margin: 0 30px;
+    margin-top: 20px;
   }
   @include rwd(600) {
     width: auto;
+    height: auto;
     padding: 0 20px 100px;
     margin: 0;
+    display: block;
   }
   // connect
   .connect {
@@ -248,17 +252,10 @@ body {
         @include rwd(1459) {
           padding: 0 0 20px 0;
           text-align: center;
-          @media screen and (max-height: 593px) {
-            display: none;
-          }
         }
         img {
           width: 148px;
           height: 147px;
-          @include rwd(700) {
-            width: 100px;
-            height: 100px;
-          }
         }
       }
       .photo {
