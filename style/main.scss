@@ -58,6 +58,7 @@ body {
     background-size: cover;
     background-position: center;
     @include pos(tl, 0);
+    
     @include rwd(1200) {
       display: none;
     }
