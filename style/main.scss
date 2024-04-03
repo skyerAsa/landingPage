@@ -20,14 +20,27 @@ body {
   .title_logo {
     width: 106px;
     height: 37px;
+    margin-right: 10px;
   }
   .title_txt {
-    font-size: 14px;
+    display: flex;
+    font-size: 16px;
     color: #fff;
-    white-space: nowrap;
+    p + p {
+      padding-left: 10px;
+    }
+    // white-space: nowrap;
+    @include rwd(381) {
+      display: flex;
+      flex-direction: column;
+      p + p {
+        padding-left: 0px;
+      }
+    }
   }
   .download {
-    padding: 2px 14px;
+    padding: 5px 14px;
+    margin-left: 10px;
     color: #fff;
     border-radius: 20px;
     background: linear-gradient(180deg, #fda700 0%, #df3601 100%);
@@ -54,7 +67,7 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    display: flex; 
+    display: flex;
     align-items: center;
     @include pos(tl, 0);
     @include rwd(1200) {
@@ -93,7 +106,8 @@ body {
   }
   @include rwd(1200) {
     width: auto;
-    margin: 0 20px 100px;
+    padding: 0 20px 100px;
+    margin: 0;
   }
   // connect
   .connect {
@@ -114,6 +128,7 @@ body {
     .office {
       display: flex;
       align-items: center;
+      margin-right: 5px;
     }
     .feedback {
       padding: 10px 25px;
@@ -122,8 +137,8 @@ body {
       justify-content: center;
       border-radius: 20px;
       background: linear-gradient(180deg, #b906ff 0%, #9a0266 100%);
-      @include rwd(1276) {
-        padding: 10px 15px;
+      @include rwd(1309) {
+        padding: 10px 10px;
       }
     }
   }
@@ -144,6 +159,9 @@ body {
       @include rwd(1459) {
         font-size: 27px;
       }
+      @include rwd(1400) {
+        font-size: 24px;
+      }
       @include rwd(1340) {
         font-size: 20px;
       }
@@ -151,6 +169,9 @@ body {
         font-size: 60px;
         @include rwd(1459) {
           font-size: 39px;
+        }
+        @include rwd(1400) {
+          font-size: 36px;
         }
         @include rwd(1340) {
           font-size: 32px;
@@ -393,6 +414,7 @@ body {
       font-size: 8px;
     }
     .android {
+      margin-right: 5px;
       background: linear-gradient(180deg, #ffe600 0%, #f00 100%);
       box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.25) inset,
         0px -8px 11px 4px rgba(109, 109, 109, 0.3) inset;

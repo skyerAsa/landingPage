@@ -187,14 +187,28 @@ body {
 .header .title_logo {
   width: 106px;
   height: 37px;
+  margin-right: 10px;
 }
 .header .title_txt {
-  font-size: 14px;
+  display: flex;
+  font-size: 16px;
   color: #fff;
-  white-space: nowrap;
+}
+.header .title_txt p + p {
+  padding-left: 10px;
+}
+@media screen and (max-width: 381px) {
+  .header .title_txt {
+    display: flex;
+    flex-direction: column;
+  }
+  .header .title_txt p + p {
+    padding-left: 0px;
+  }
 }
 .header .download {
-  padding: 2px 14px;
+  padding: 5px 14px;
+  margin-left: 10px;
   color: #fff;
   border-radius: 20px;
   background: linear-gradient(180deg, #fda700 0%, #df3601 100%);
@@ -272,7 +286,8 @@ body {
 @media screen and (max-width: 1200px) {
   .item {
     width: auto;
-    margin: 0 20px 100px;
+    padding: 0 20px 100px;
+    margin: 0;
   }
 }
 .item .connect {
@@ -296,6 +311,7 @@ body {
 .item .connect .office {
   display: flex;
   align-items: center;
+  margin-right: 5px;
 }
 .item .connect .feedback {
   padding: 10px 25px;
@@ -305,9 +321,9 @@ body {
   border-radius: 20px;
   background: linear-gradient(180deg, #b906ff 0%, #9a0266 100%);
 }
-@media screen and (max-width: 1276px) {
+@media screen and (max-width: 1309px) {
   .item .connect .feedback {
-    padding: 10px 15px;
+    padding: 10px 10px;
   }
 }
 .item .download_txt {
@@ -332,6 +348,11 @@ body {
     font-size: 27px;
   }
 }
+@media screen and (max-width: 1400px) {
+  .item .download_txt .caption {
+    font-size: 24px;
+  }
+}
 @media screen and (max-width: 1340px) {
   .item .download_txt .caption {
     font-size: 20px;
@@ -343,6 +364,11 @@ body {
 @media screen and (max-width: 1459px) {
   .item .download_txt .caption p {
     font-size: 39px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .item .download_txt .caption p {
+    font-size: 36px;
   }
 }
 @media screen and (max-width: 1340px) {
@@ -601,6 +627,7 @@ body {
   font-size: 8px;
 }
 .footer .photo .android {
+  margin-right: 5px;
   background: linear-gradient(180deg, #ffe600 0%, #f00 100%);
   box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.25) inset, 0px -8px 11px 4px rgba(109, 109, 109, 0.3) inset;
 }
