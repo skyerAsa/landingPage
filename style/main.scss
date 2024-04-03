@@ -58,8 +58,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
-
     @include rwd(1200) {
       display: none;
     }
