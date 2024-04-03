@@ -202,6 +202,7 @@ body {
 }
 
 .container {
+  min-height: 394px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -258,7 +259,7 @@ body {
 
 .item {
   box-sizing: border-box;
-  margin: 40px 40px;
+  margin: 40px 30px;
   background-color: #000;
   color: #fff;
   display: flex;
@@ -272,6 +273,7 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .item {
+    width: auto;
     margin: 0 20px 100px;
   }
 }
@@ -305,7 +307,7 @@ body {
   border-radius: 20px;
   background: linear-gradient(180deg, #b906ff 0%, #9a0266 100%);
 }
-@media screen and (max-width: 1259px) {
+@media screen and (max-width: 1276px) {
   .item .connect .feedback {
     padding: 10px 15px;
   }
@@ -319,7 +321,7 @@ body {
   }
 }
 .item .download_txt .caption {
-  margin-bottom: 40px;
+  margin: 20px 0;
   display: flex;
   align-items: flex-end;
   font-weight: 900;
@@ -334,7 +336,7 @@ body {
 }
 @media screen and (max-width: 1448px) {
   .item .download_txt .caption {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .item .download_txt .caption p {
@@ -347,7 +349,7 @@ body {
 }
 @media screen and (max-width: 1448px) {
   .item .download_txt .caption p {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 .item .download_txt .download {
@@ -366,6 +368,11 @@ body {
   .item .download_txt .download .qr_card {
     padding: 0 0 20px 0;
     text-align: center;
+  }
+}
+@media screen and (max-width: 1459px) and (max-height: 593px) {
+  .item .download_txt .download .qr_card {
+    display: none;
   }
 }
 .item .download_txt .download .qr_card img {
@@ -399,6 +406,12 @@ body {
   border: 2px solid #151515;
   border-radius: 50px;
   font-size: 10px;
+}
+@media screen and (max-height: 593px) {
+  .item .download_txt .download .photo .android,
+  .item .download_txt .download .photo .ios {
+    height: 50px;
+  }
 }
 .item .download_txt .download .photo .android {
   background: linear-gradient(180deg, #ffe600 0%, #f00 100%);
