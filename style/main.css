@@ -225,10 +225,8 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  background-image: url(../img/pcBg05.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  display: flex;
+  align-items: center;
   top: 0;
   left: 0;
 }
@@ -238,7 +236,7 @@ body {
   }
 }
 .container .title_img .img {
-  height: 100%;
+  position: relative;
 }
 .container .title_img .logo {
   margin: 50px 0 0 30px;
@@ -331,10 +329,10 @@ body {
 }
 @media screen and (max-width: 1459px) {
   .item .download_txt .caption {
-    font-size: 30px;
+    font-size: 27px;
   }
 }
-@media screen and (max-width: 1448px) {
+@media screen and (max-width: 1340px) {
   .item .download_txt .caption {
     font-size: 20px;
   }
@@ -344,10 +342,10 @@ body {
 }
 @media screen and (max-width: 1459px) {
   .item .download_txt .caption p {
-    font-size: 42px;
+    font-size: 39px;
   }
 }
-@media screen and (max-width: 1448px) {
+@media screen and (max-width: 1340px) {
   .item .download_txt .caption p {
     font-size: 32px;
   }
