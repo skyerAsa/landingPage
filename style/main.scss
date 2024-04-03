@@ -29,7 +29,6 @@ body {
     p + p {
       padding-left: 10px;
     }
-    // white-space: nowrap;
     @include rwd(381) {
       display: flex;
       flex-direction: column;
