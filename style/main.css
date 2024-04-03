@@ -240,6 +240,12 @@ body {
     flex: 1;
   }
 }
+@media screen and (max-width: 600px) {
+  .container .hd_img {
+    display: block;
+    height: auto;
+  }
+}
 .container .hd_img img {
   height: 100%;
 }
