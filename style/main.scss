@@ -190,10 +190,7 @@ body {
       @include rwd(1459) {
         font-size: 27px;
       }
-      @include rwd(1400) {
-        font-size: 24px;
-      }
-      @include rwd(1340) {
+      @include rwd(900) {
         font-size: 20px;
       }
       @include rwd(826) {
@@ -207,10 +204,7 @@ body {
         @include rwd(1459) {
           font-size: 39px;
         }
-        @include rwd(1400) {
-          font-size: 36px;
-        }
-        @include rwd(1340) {
+        @include rwd(900) {
           font-size: 32px;
         }
       }

@@ -393,12 +393,7 @@ body {
     font-size: 27px;
   }
 }
-@media screen and (max-width: 1400px) {
-  .item .download_txt .caption {
-    font-size: 24px;
-  }
-}
-@media screen and (max-width: 1340px) {
+@media screen and (max-width: 900px) {
   .item .download_txt .caption {
     font-size: 20px;
   }
@@ -421,12 +416,7 @@ body {
     font-size: 39px;
   }
 }
-@media screen and (max-width: 1400px) {
-  .item .download_txt .caption p {
-    font-size: 36px;
-  }
-}
-@media screen and (max-width: 1340px) {
+@media screen and (max-width: 900px) {
   .item .download_txt .caption p {
     font-size: 32px;
   }
