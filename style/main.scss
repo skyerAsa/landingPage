@@ -3,6 +3,9 @@
 body {
   background-color: #000;
   overflow-y: hidden;
+  @include rwd(600){
+    overflow-y: auto;
+  }
 }
 
 // header

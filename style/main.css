@@ -169,6 +169,11 @@ body {
   background-color: #000;
   overflow-y: hidden;
 }
+@media screen and (max-width: 600px) {
+  body {
+    overflow-y: auto;
+  }
+}
 
 .header {
   display: none;
