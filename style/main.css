@@ -217,8 +217,6 @@ body {
 
 .container {
   width: 100%;
-  height: 100%;
-  min-height: 700px;
   display: flex;
   justify-content: space-between;
 }
@@ -231,47 +229,20 @@ body {
   display: none;
   position: relative;
 }
-@media screen and (max-width: 900px) {
-  .container .hd_img {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-  }
-}
 @media screen and (max-width: 600px) {
   .container .hd_img {
     display: block;
     height: auto;
   }
 }
-.container .hd_img .bg_img {
-  min-height: 832px;
-}
-.container .hd_img .logo {
-  width: 24vw;
-  height: 1vw;
-  position: absolute;
-  top: 50px;
-  left: 30px;
-}
-@media screen and (max-width: 600px) {
-  .container .hd_img .logo {
-    display: none;
-  }
-}
 .container .title_img {
   width: 100%;
-  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 0;
-  left: 0;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
   .container .title_img {
     display: none;
   }
@@ -302,7 +273,6 @@ body {
 }
 
 .item {
-  box-sizing: border-box;
   margin: 40px 30px 0 30px;
   background-color: #000;
   color: #fff;
@@ -310,16 +280,17 @@ body {
   overflow: auto;
   flex-direction: column;
   justify-content: space-around;
+  overflow: scroll;
 }
 @media screen and (max-width: 1459px) {
   .item {
-    width: 30%;
+    height: 90vh;
+    margin: 20px 20px;
   }
 }
 @media screen and (max-width: 900px) {
   .item {
-    height: 90vh;
-    margin: 0 30px;
+    width: 30%;
     margin-top: 20px;
   }
 }
@@ -333,6 +304,7 @@ body {
   }
 }
 .item .connect {
+  padding-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -407,9 +379,14 @@ body {
   display: flex;
   align-items: flex-end;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 41px;
   justify-content: center;
   text-shadow: 0.1em 0.1em #fe00d0;
+}
+@media screen and (max-width: 1481px) {
+  .item .download_txt .caption {
+    font-size: 35px;
+  }
 }
 @media screen and (max-width: 1459px) {
   .item .download_txt .caption {
@@ -426,18 +403,18 @@ body {
     font-size: 20px;
   }
 }
-@media screen and (max-width: 1301px) {
+@media screen and (max-width: 826px) {
   .item .download_txt .caption {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 869px) {
-  .item .download_txt .caption {
-    font-size: 12px;
+    display: none;
   }
 }
 .item .download_txt .caption p {
-  font-size: 60px;
+  font-size: 53px;
+}
+@media screen and (max-width: 1481px) {
+  .item .download_txt .caption p {
+    font-size: 47px;
+  }
 }
 @media screen and (max-width: 1459px) {
   .item .download_txt .caption p {
@@ -454,16 +431,6 @@ body {
     font-size: 32px;
   }
 }
-@media screen and (max-width: 1301px) {
-  .item .download_txt .caption p {
-    font-size: 28px;
-  }
-}
-@media screen and (max-width: 869px) {
-  .item .download_txt .caption p {
-    font-size: 24px;
-  }
-}
 .item .download_txt .download {
   display: flex;
   justify-content: center;
@@ -474,17 +441,23 @@ body {
   }
 }
 .item .download_txt .download .qr_card {
-  padding-right: 30px;
+  padding-right: 10px;
 }
 @media screen and (max-width: 1459px) {
   .item .download_txt .download .qr_card {
-    padding: 0 0 20px 0;
+    padding: 20px 0;
     text-align: center;
   }
 }
 .item .download_txt .download .qr_card img {
   width: 148px;
   height: 147px;
+}
+@media screen and (max-width: 860px) {
+  .item .download_txt .download .qr_card img {
+    width: 100%;
+    height: 100%;
+  }
 }
 .item .download_txt .download .photo {
   display: flex;
@@ -504,7 +477,7 @@ body {
 }
 .item .download_txt .download .photo .android,
 .item .download_txt .download .photo .ios {
-  width: 250px;
+  width: 200px;
   height: 66px;
   display: flex;
   align-items: center;
@@ -517,7 +490,14 @@ body {
 @media screen and (max-width: 1309px) {
   .item .download_txt .download .photo .android,
   .item .download_txt .download .photo .ios {
-    width: 200px;
+    width: 150px;
+    font-size: 0px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .item .download_txt .download .photo .android,
+  .item .download_txt .download .photo .ios {
+    width: 100%;
     font-size: 0px;
   }
 }
