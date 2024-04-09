@@ -312,6 +312,11 @@ body {
 .container .title_img.on {
   display: flex;
 }
+@media screen and (max-width: 900px) {
+  .container .title_img.on {
+    display: none;
+  }
+}
 @media screen and (max-width: 1459px) {
   .container .title_img {
     width: 70%;
@@ -321,12 +326,6 @@ body {
   .container .title_img {
     display: none;
   }
-}
-.container .title_img .pc_card2,
-.container .title_img .pc_card3,
-.container .title_img .pc_card4,
-.container .title_img .pc_card5 {
-  display: none;
 }
 .container .title_img .logo {
   width: 15vw;

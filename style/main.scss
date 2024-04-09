@@ -127,17 +127,14 @@ body {
     display: none;
     &.on {
       display: flex;
+      @include rwd(900) {
+        display: none;
+      }
     }
     @include rwd(1459) {
       width: 70%;
     }
     @include rwd(900) {
-      display: none;
-    }
-    .pc_card2,
-    .pc_card3,
-    .pc_card4,
-    .pc_card5 {
       display: none;
     }
     .logo {
