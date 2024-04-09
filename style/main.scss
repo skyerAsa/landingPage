@@ -3,7 +3,7 @@
 body {
   background-color: #000;
   overflow-y: hidden;
-  @include rwd(600){
+  @include rwd(600) {
     overflow-y: auto;
   }
 }
@@ -53,17 +53,68 @@ body {
 
 .container {
   width: 100%;
+  height: 99vh;
   display: flex;
   justify-content: space-between;
   @include rwd(600) {
     display: block;
+    height: auto;
   }
   .hd_img {
+    height: 100%;
     display: none;
     position: relative;
-    @include rwd(600) {
-      display: block;
-      height: auto;
+    overflow-x: hidden;
+    @include rwd(900) {
+      &.on {
+        display: block;
+      }
+      flex: 1;
+    }
+    @include rwd(700) {
+    }
+    .logo {
+      width: 20vw;
+      height: 8vw;
+      top: 0px;
+      left: 30px;
+      @include rwd(900) {
+        position: fixed;
+        top: 25px;
+      }
+      @include rwd(600) {
+        display: none;
+      }
+    }
+    .caption {
+      display: none;
+      @include rwd(676) {
+        margin: 5px 0;
+        display: flex;
+        align-items: flex-end;
+        font-weight: 900;
+        font-size: 40px;
+        justify-content: center;
+        color: #fff;
+        text-shadow: 0.1em 0.1em #fe00d0;
+      }
+      @include rwd(600) {
+        display: none;
+      }
+      p {
+        font-size: 53px;
+      }
+    }
+    .img_txt {
+      text-align: center;
+      margin: 0 10px;
+      @include rwd(600) {
+        display: none;
+      }
+      p {
+        color: #fff;
+        font-size: 14px;
+      }
     }
   }
   .title_img {
@@ -72,11 +123,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @include rwd(600) {
+    overflow-x: hidden;
+    display: none;
+    &.on {
+      display: flex;
+    }
+    @include rwd(1459) {
+      width: 70%;
+    }
+    @include rwd(900) {
       display: none;
     }
-    .img {
-      position: relative;
+    .pc_card2,
+    .pc_card3,
+    .pc_card4,
+    .pc_card5 {
+      display: none;
     }
     .logo {
       width: 15vw;
@@ -84,16 +146,16 @@ body {
       position: absolute;
       top: 50px;
       left: 30px;
+      @include rwd(900) {
+        top: 25px;
+      }
     }
     .img_txt {
-      padding: 0 0 5% 5%;
-      position: absolute;
+      text-align: center;
       @include pos(bl, 0);
       @include rwd(1100) {
-        padding: 0 0 0 0;
         position: relative;
         font-size: 12px;
-        text-align: center;
       }
       p {
         color: #fff;
@@ -106,18 +168,16 @@ body {
 .item {
   height: 90vh;
   margin: 40px 30px 0 30px;
-  padding-right: 7px;
   background-color: #000;
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   overflow-x: hidden;
   @include rwd(1459) {
+    width: 30%;
     margin: 20px 20px 0 20px;
   }
   @include rwd(900) {
-    width: 30%;
     margin-top: 20px;
   }
   @include rwd(600) {
@@ -177,15 +237,16 @@ body {
   }
   // download
   .download_txt {
-    margin-left: 30px;
+    margin: 50px 0 0 30px;
     @include rwd(1305) {
       margin-left: 0px;
+      margin-top: 50px;
     }
     @include rwd(600) {
       display: none;
     }
     .caption {
-      margin: 20px 0;
+      margin: 30px 0;
       display: flex;
       align-items: flex-end;
       font-weight: 900;
@@ -288,7 +349,7 @@ body {
     }
   }
   .item_txt {
-    margin: 10px 0;
+    margin: 30px 0;
     font-size: 14px;
     text-align: center;
     @include rwd(839) {
@@ -300,12 +361,16 @@ body {
   }
   // cardlist
   .cardlist {
+    padding-top: 100px;
     @include rwd(600) {
       padding: 0px;
     }
     ul {
-      width: 100%;
       display: flex;
+      width: 100%;
+      ul + ul {
+        padding-left: 5px;
+      }
       li {
         flex: 1;
         position: relative;
@@ -348,25 +413,25 @@ body {
         }
       }
     }
-    .img_slide {
-      display: flex;
-      justify-content: center;
-      @include rwd(600) {
-        padding-bottom: 20px;
+  }
+  .img_slide {
+    display: flex;
+    justify-content: center;
+    @include rwd(600) {
+      padding-bottom: 20px;
+    }
+    .img_circle {
+      width: 8px;
+      height: 8px;
+      margin-top: 10px;
+      border-radius: 50px;
+      background-color: gray;
+      margin-bottom: 10px;
+      & + .img_circle {
+        margin-left: 5px;
       }
-      .img_circle {
-        width: 8px;
-        height: 8px;
-        margin-top: 10px;
-        border-radius: 50px;
-        background-color: gray;
-        margin-bottom: 10px;
-        & + .img_circle {
-          margin-left: 5px;
-        }
-        &:first-child {
-          background-color: #fff;
-        }
+      &.on {
+        background-color: #fff;
       }
     }
   }

@@ -1,212 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style/main.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://web.cdn.openinstall.io/openinstall.js"></script>
+  </head>
 
-    <body>
-</head>
-<!-- header -->
-<div class="header">
-    <div class="title_logo">
-        <img src="img/logo.png" alt="">
-    </div>
-    <div class="title_txt">
-        <p>享你所想</p>
-        <p>有求必硬</p>
-    </div>
-    <div class="download">
-        <p>立即下載</p>
-    </div>
-</div>
-<!-- container -->
-<div class="container">
-    <div class="hd_img">
-        <img class="bg_img" src="img/mobBg05.jpg" alt="">
-    </div>
-    <div class="title_img">
-        <img class="img" src="img/pcBg05.png" alt="">
-        <div class="logo">
-            <img src="img/logo.png" alt="">
+  <body>
+    <div id="app">
+      <!-- header -->
+      <div class="header">
+        <div class="title_logo">
+          <img src="img/logo.png" alt="" />
         </div>
-        <div class="img_txt">
+        <div class="title_txt">
+          <p>享你所想</p>
+          <p>有求必硬</p>
+        </div>
+        <div class="download">
+          <p>立即下載</p>
+        </div>
+      </div>
+      <!-- container -->
+      <div class="container">
+        <div
+          class="hd_img"
+          v-for="(item,index) in mob"
+          :key="index"
+          :class="{on:index===sel}"
+        >
+          <img class="bg_img" :src="item" alt="" />
+
+          <div class="logo">
+            <img src="img/logo.png" alt="" />
+          </div>
+          <div class="caption">
+            享你所想 有求必
+            <p>硬</p>
+          </div>
+          <div class="img_txt">
             <p>由于某些原因，本APP被某些软件认定为病毒，请大家放心使用，</p>
-            <p>本APP含有广告收益，且已盈利，安装本APP不会对您的手机造成任何损害</p>
+            <p>
+              本APP含有广告收益，且已盈利，安装本APP不会对您的手机造成任何损害
+            </p>
+          </div>
         </div>
-    </div>
-    <!-- item -->
-    <div class="item">
-        <!-- connect -->
-        <div class="connect">
+        <div
+          class="title_img"
+          v-for="(item,index) in pc"
+          :key="index"
+          :class="{on:index===sel}"
+        >
+          <img class="bg_img" :src="item" alt="" />
+          <div class="logo">
+            <img src="img/logo.png" alt="" />
+          </div>
+          <div class="img_txt">
+            <p>由于某些原因，本APP被某些软件认定为病毒，请大家放心使用，</p>
+            <p>
+              本APP含有广告收益，且已盈利，安装本APP不会对您的手机造成任何损害
+            </p>
+          </div>
+        </div>
+        <!-- item -->
+        <div class="item">
+          <!-- connect -->
+          <div class="connect">
             <div class="business">
-                <div class="img">
-                    <img src="img/icon-telegramFill.png" alt="">
-                </div>
-                联系商务
+              <div class="img">
+                <img src="img/icon-telegramFill.png" alt="" />
+              </div>
+              联系商务
             </div>
             <div class="office">
-                <img src="img/icon-telegramFill.png" alt=""> 联系官方
+              <img src="img/icon-telegramFill.png" alt="" /> 联系官方
             </div>
             <div class="feedback">
-                <p>問題反饋</p>
+              <p>問題反饋</p>
             </div>
-        </div>
-        <!-- download -->
-        <div class="download_txt">
+          </div>
+          <!-- download -->
+          <div class="download_txt">
             <div class="caption">
-                享你所想 有求必
-                <p>硬</p>
+              享你所想 有求必
+              <p>硬</p>
             </div>
 
             <div class="download">
-                <div class="qr_card">
-                    <img src="img/qrcode.png" alt="">
+              <div class="qr_card">
+                <img src="img/qrcode.png" alt="" />
+              </div>
+              <div class="photo">
+                <div class="android">
+                  <img src="img/android.png" alt="" />
+                  <div class="ph_txt">
+                    <h2>安卓版下载</h2>
+                    <p>建议UC/夸克浏览器打开</p>
+                  </div>
                 </div>
-                <div class="photo">
-                    <div class="android">
-                        <img src="img/android.png" alt="">
-                        <div class="ph_txt">
-                            <h2>安卓版下载</h2>
-                            <p>建议UC/夸克浏览器打开</p>
-                        </div>
-                    </div>
-                    <div class="ios">
-                        <img src="img/ios.png" alt="">
-                        <div class="ph_txt">
-                            <h2>苹果版下载</h2>
-                            <p>请使用Safari浏览器打开</p>
-                        </div>
-                    </div>
+                <div class="ios">
+                  <img src="img/ios.png" alt="" />
+                  <div class="ph_txt">
+                    <h2>苹果版下载</h2>
+                    <p>请使用Safari浏览器打开</p>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="item_txt">请使用UC浏览器.本机扫码功能扫码 不支持微信或支付宝扫码 </div>
-        </div>
+            <div class="item_txt">
+              请使用UC浏览器.本机扫码功能扫码 不支持微信或支付宝扫码
+            </div>
+          </div>
 
-        <!-- cardlist -->
-        <div class="cardlist">
-            <ul>
-                <li><img src="img/type29.jpg" alt="">
-                    <p>原創</p>
-                </li>
-                <li><img src="img/type30.jpg" alt="">
-                    <p>黑料</p>
-                </li>
-                <li><img src="img/type28.jpg" alt="">
-                    <p>偷拍</p>
-                </li>
-                <li><img src="img/type27.jpg" alt="">
-                    <p>AI换脸</p>
-                </li>
-                <li><img src="img/type26.jpg" alt="">
-                    <p>网黄</p>
-                </li>
+          <!-- cardlist -->
+          <div class="cardlist">
+            <ul class="card">
+              <li v-for="(item,index) in list" :key="index">
+                <img :src="item.img" alt="" />
+                <p>{{item.name}}</p>
+              </li>
             </ul>
-            <div class="img_slide">
-                <div class="img_circle"></div>
-                <div class="img_circle"></div>
-                <div class="img_circle"></div>
-                <div class="img_circle"></div>
-                <div class="img_circle"></div>
-            </div>
-        </div>
-        <!-- contact -->
-        <div class="contact">
+          </div>
+          <div class="img_slide">
+            <div
+              class="img_circle"
+              v-for="(item,index) in list"
+              :key="index"
+              :class="{on:index===sel}"
+              @click="sel=index , data()"
+            ></div>
+          </div>
+          <!-- contact -->
+          <div class="contact">
             <ul>
-                <li>
-                    <div class="img">
-                        <img src="img/icon-internet.png" alt="">
-                        <div class="contact_txt">
-                            <h2>永久域名</h2>
-                            <p>338.TV</p>
-                        </div>
-                    </div>
-                    <div class="contact_copy">
-                        复制官网
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="img/icon-qrcode.png" alt="">
-                        <div class="contact_txt">
-                            <h2>QR SCAN</h2>
-                            <p>保存下载二维码图片</p>
-                        </div>
-                    </div>
-                    <div class="contact_copy">
-                        下载保存
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="img/icon-telegram.png" alt="">
-                        <div class="contact_txt">
-                            <h2>商务合飞机</h2>
-                            <p>https://t.me/vingleme_sw</p>
-                        </div>
-                    </div>
-                    <div class="contact_copy">
-                        联系我们
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img src="img/icon-telegram.png" alt="">
-                        <div class="contact_txt">
-                            <h2>传媒入住飞机</h2>
-                            <p>https://t.me/aaajingyu</p>
-                        </div>
-                    </div>
-                    <div class="contact_copy">
-                        联系我们
-                    </div>
-                </li>
-                <li>
-                    <div class="img">
-                        <img class="contact_mail" src="img/icon-mail.png" alt="">
-                        <div class="contact_txt">
-                            <h2>官方邮箱</h2>
-                            <p>wwangviersansi@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact_copy">
-                        复制邮箱
-                    </div>
-                </li>
+              <li>
+                <div class="img">
+                  <img src="img/icon-internet.png" alt="" />
+                  <div class="contact_txt">
+                    <h2>永久域名</h2>
+                    <p>338.TV</p>
+                  </div>
+                </div>
+                <div class="contact_copy">复制官网</div>
+              </li>
+              <li>
+                <div class="img">
+                  <img src="img/icon-qrcode.png" alt="" />
+                  <div class="contact_txt">
+                    <h2>QR SCAN</h2>
+                    <p>保存下载二维码图片</p>
+                  </div>
+                </div>
+                <div class="contact_copy">下载保存</div>
+              </li>
+              <li>
+                <div class="img">
+                  <img src="img/icon-telegram.png" alt="" />
+                  <div class="contact_txt">
+                    <h2>商务合飞机</h2>
+                    <p>https://t.me/vingleme_sw</p>
+                  </div>
+                </div>
+                <div class="contact_copy">联系我们</div>
+              </li>
+              <li>
+                <div class="img">
+                  <img src="img/icon-telegram.png" alt="" />
+                  <div class="contact_txt">
+                    <h2>传媒入住飞机</h2>
+                    <p>https://t.me/aaajingyu</p>
+                  </div>
+                </div>
+                <div class="contact_copy">联系我们</div>
+              </li>
+              <li>
+                <div class="img">
+                  <img class="contact_mail" src="img/icon-mail.png" alt="" />
+                  <div class="contact_txt">
+                    <h2>官方邮箱</h2>
+                    <p>wwangviersansi@gmail.com</p>
+                  </div>
+                </div>
+                <div class="contact_copy">复制邮箱</div>
+              </li>
             </ul>
-        </div>
-        <!-- question -->
-        <div class="question">
+          </div>
+          <!-- question -->
+          <div class="question">
             <a href="#">安装教程</a>
             <a href="#">问题反馈</a>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-
-
-<!-- footer -->
-<div class="footer">
-    <div class="photo">
-        <div class="android">
-            <img src="img/android.png" alt="">
+      <!-- footer -->
+      <div class="footer">
+        <div class="photo">
+          <div class="android">
+            <img src="img/android.png" alt="" />
             <div class="ph_txt">
-                <h2>安卓版下载</h2>
-                <p>Android Download</p>
+              <h2>安卓版下载</h2>
+              <p>Android Download</p>
             </div>
-        </div>
-        <div class="ios">
-            <img src="img/ios.png" alt="">
+          </div>
+          <div class="ios">
+            <img src="img/ios.png" alt="" />
             <div class="ph_txt">
-                <h2>苹果版下载</h2>
-                <p>IOS Download</p>
+              <h2>苹果版下载</h2>
+              <p>IOS Download</p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
-</body>
-
+  </body>
 </html>
+<script>
+  const { createApp, ref, onMounted } = Vue;
+  createApp({
+    setup() {
+      const list = ref([]);
+      const sel = ref(0);
+      const mob = ref([
+        "img/type1/mobBg05.jpg",
+        "img/type2/mobBg04.jpg",
+        "img/type3/mobBg03.jpg",
+        "img/type4/mobBg02.jpg",
+        "img/type5/mobBg01.jpg",
+      ]);
+      const pc = ref([
+        "img/type1/pcBg05.png",
+        "img/type2/pcBg04.jpg",
+        "img/type3/pcBg03.jpg",
+        "img/type4/pcBg02.jpg",
+        "img/type5/pcBg01.jpg",
+      ]);
+      console.log(mob);
+
+      function data() {
+        axios.get("json/schema.json").then((res) => {
+          list.value = res.data[sel.value];
+          console.log(sel.value);
+        });
+      }
+
+      onMounted(() => {
+        data();
+      });
+      return {
+        list,
+        sel,
+        data,
+        mob,
+        pc,
+      };
+    },
+  }).mount("#app");
+</script>
