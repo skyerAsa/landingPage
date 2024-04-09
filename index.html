@@ -131,7 +131,7 @@
               v-for="(item,index) in list"
               :key="index"
               :class="{on:index===sel}"
-              @click="sel=index"
+              @click="sel=index , data()"
             ></div>
           </div>
           <!-- contact -->
@@ -239,10 +239,12 @@
         "img/type4/pcBg02.jpg",
         "img/type5/pcBg01.jpg",
       ]);
+      console.log(mob);
 
       function data() {
         axios.get("json/schema.json").then((res) => {
           list.value = res.data[sel.value];
+          console.log(sel.value);
         });
       }
 
